@@ -1,13 +1,16 @@
-[
+{
+  "notes": [
     {
-        "title":"Test Title",
-        "text":"Test text"
+      "title": "Test Title",
+      "text": "Test text"
     },
     {
-        "title":"get coffee",
-        "text":"go to starbucks"
+      "title": "get coffee",
+      "text": "go to starbucks"
+    },
+    {
+      "title": "workout",
+      "text": "workout "
     }
-]
-
-
-
+  ]
+}
