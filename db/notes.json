@@ -11,6 +11,26 @@
     {
       "title": "workout",
       "text": "workout "
+    },
+    {
+      "title": "go to the grocery store",
+      "text": "get bread",
+      "id": "3"
+    },
+    {
+      "title": "run",
+      "text": "run",
+      "id": "4"
+    },
+    {
+      "title": "jog",
+      "text": "jog",
+      "id": "5"
+    },
+    {
+      "title": "do coding homework",
+      "text": "challenge 11",
+      "id": "6"
     }
   ]
 }

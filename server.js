@@ -1,8 +1,4 @@
-const fs = require('fs');
 const express = require('express');
-const db = require('./db/notes.json');
-const path = require('path');
-
 const app = express()
 // PORT
 const PORT = process.env.PORT || 3000;
@@ -17,41 +13,8 @@ app.get('/notes', (req, res) => {
   });
 
 // links api routes
-// const apiRouter = require('./routes/notes')
-// app.use('/api', apiRouter)
-// const { notesList } = "/db/notes.json";
-
-// get the json file
-app.get('/api/notes', (req, res) => {
-    res.json( db );
-});
-
-// save a new note
-app.post('/api/notes', (req, res) => { 
-    // send new note and db to addNote()
-    const note = addNote(req.body, db);
-    res.json(note);    
-})
-
-function addNote(body, db) {
-    console.log(body);
-    // save on the request body
-    const notes = body;
-  
-    // add to the db.json file (with unique id)
-    db.push(notes);
-    fs.writeFileSync(
-        path.join(__dirname, '/db/notes.json'),
-        JSON.stringify({ notes: db }, null, 2)
-      );
-    // return the new note to the client
-    return notes;
-  }
-  
-// delete a note
-app.delete('/api/delete', (req, res) => {
-
-})
+const apiRouter = require('./routes/notes')
+app.use('/api', apiRouter)
 
 // display the index.html file
 app.get('*', (req, res) => {
