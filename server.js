@@ -2,10 +2,8 @@ const express = require('express')
 const app = express()
 
 app.use(express.json());
-
 // keep html files static
 app.use(express.static("public"))
-
 
 // display the notes/html file
 app.get('/notes', (req, res) => {
@@ -15,21 +13,25 @@ app.get('/notes', (req, res) => {
 // links api routes
 // const apiRouter = require('./routes/notes')
 // app.use('/api', apiRouter)
+// const { notesList } = "/db/notes.json";
 
+// get the json file
 app.get('/api/notes', (req, res) => {
     res.sendFile(__dirname + '/db/notes.json');
 });
 
 // save a new note
-app.post('/notes', (req, res) => {
-
+app.post('/api/notes', (req, res) => {
     // save on the request body
+    console.log(req.body);
+    res.json(req.body);
     // add to the db.json file (with unique id)
+  
     // return the new note to the client
 })
 
 // delete a note
-app.delete('/delete', (req, res) => {
+app.delete('/api/delete', (req, res) => {
 
 })
 
