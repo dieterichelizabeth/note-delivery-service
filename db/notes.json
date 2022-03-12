@@ -2,15 +2,18 @@
   "notes": [
     {
       "title": "Test Title",
-      "text": "Test text"
+      "text": "Test text",
+      "id": "0"
     },
     {
       "title": "get coffee",
-      "text": "go to starbucks"
+      "text": "go to starbucks",
+      "id": "1"
     },
     {
       "title": "workout",
-      "text": "workout "
+      "text": "workout ",
+      "id": "2"
     },
     {
       "title": "go to the grocery store",
