@@ -4,6 +4,8 @@ const router = express.Router()
 const db = require('../db/notes.json');
 const path = require('path');
 
+const { v4: uuidv4 } = require('uuid');
+
 router.use(express.json());
 
 
@@ -15,7 +17,7 @@ router.get('/notes', (req, res) => {
 // save a new note
 router.post('/notes', (req, res) => { 
     // adds unique id
-    req.body.id = db.notes.length.toString();
+    req.body.id = uuidv4();
 
     // send new note and db to addNote()
     const note = addNote(req.body, db);
@@ -37,8 +39,13 @@ function addNote(body, db) {
     return notes;
   }
   
-// delete a note
+// delete a note (recieves a query parameter)
 router.delete('/delete', (req, res) => {
+    // read all notes from the json file
+
+    // remove the note with the given id property
+
+    // rewrite the notes to the db.json file
 
 })
 
