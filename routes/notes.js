@@ -10,7 +10,6 @@ const { v4: uuidv4 } = require('uuid');
 
 router.use(express.json());
 
-
 // get the json file
 router.get('/notes', (req, res) => {
     res.json( db.notes );
@@ -27,7 +26,7 @@ router.post('/notes', (req, res) => {
 })
 
 function addNote(body, db) {
-    // save on the request body
+    // save the request body
     const notes = body;
   
     // add to the db.json file 
@@ -37,7 +36,6 @@ function addNote(body, db) {
         JSON.stringify({ notes: db.notes }, null, 2)
       );
 
-    // return the new note to the client
     return notes;
   }
   
@@ -46,7 +44,7 @@ router.delete('/notes/:id', (req, res) => {
     // get the id
     noteToDelete = req.params.id;
 
-    // send new note and db to addNote()
+    // send note id and db to deleteNote()
     const note = deleteNote(noteToDelete, db);
     res.json(note); 
 })
@@ -62,16 +60,12 @@ function deleteNote(noteToDelete, db) {
     // then splice it
     notes.splice(indexOfNote, 1)
 
-  // console.log(indexOfNote);
-  console.log(notes);
-
   // rewrite the notes to the db.json file
   fs.writeFileSync(
     path.join(__dirname, '../db/notes.json'),
     JSON.stringify({ notes: db.notes }, null, 2)
   );
 
-  // return the new note to the client
   return notes;
 }
 
