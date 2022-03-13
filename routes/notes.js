@@ -4,6 +4,8 @@ const router = express.Router()
 const db = require('../db/notes.json');
 const path = require('path');
 
+// uuid package
+// https://www.npmjs.com/package/uuid
 const { v4: uuidv4 } = require('uuid');
 
 router.use(express.json());
@@ -40,9 +42,10 @@ function addNote(body, db) {
   }
   
 // delete a note (recieves a query parameter)
-router.delete('/delete', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
     // read all notes from the json file
-
+    console.log(req.params.id)
+    res.send(`Get Notes with ID ${req.params.id}`)
     // remove the note with the given id property
 
     // rewrite the notes to the db.json file
