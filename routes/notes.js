@@ -5,7 +5,6 @@ const db = require('../db/notes.json');
 const path = require('path');
 
 // uuid package
-// https://www.npmjs.com/package/uuid
 const { v4: uuidv4 } = require('uuid');
 
 router.use(express.json());
