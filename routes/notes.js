@@ -44,34 +44,30 @@ function addNote(body, db) {
 // delete a note (recieves query parameter)
 router.delete('/notes/:id', (req, res) => {
     // get the id
-    delte = req.params.id;
-    console.log(req.params.id)
+    noteToDelete = req.params.id;
 
     // remove the note with the given id property
-    // const idArray = db.notes.map((notes) => notes.id); - returns all id's
-    // const resulted = db.notes.filter((notes) => notes.id = id); - turns all id's into the id param
-    // find the index, then splice it
-    // const noteToDelete = db.notes.findIndex(db.notes.id = id) - does not work
-    // console.log(db.notes.findIndex(not => not.id = delte)); - returns '0'
-    const arr = db.notes;
+    const currentNotes = db.notes;
 
-    const index = arr.findIndex(object => {
-      return object.id === delte;
+    // find the index
+    const indexOfNote = currentNotes.findIndex(object => {
+      return object.id === noteToDelete;
     });
+      // then splice it
+      currentNotes.splice(indexOfNote, 1)
 
-    arr.splice(index, 1)
-    console.log(index);
-    console.log(arr);
+    // console.log(indexOfNote);
+    console.log(currentNotes);
   
 
     // rewrite the notes to the db.json file
-    // fs.writeFileSync(
-    //   path.join(__dirname, '../db/notes.json'),
-    //   JSON.stringify({ deleteNote: db.notes }, null, 2)
-    // );
+    fs.writeFileSync(
+      path.join(__dirname, '../db/notes.json'),
+      JSON.stringify({ currentNotes: db.notes }, null, 2)
+    );
 
     // return the new note to the client
-    // return notes;
+    return notes;
 })
 
 module.exports = router
