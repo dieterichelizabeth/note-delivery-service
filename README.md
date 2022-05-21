@@ -10,6 +10,8 @@ Users can access their previous notes by clicking on any of the notes in the lef
 
 For this challenge, the application’s front end has already been created. Our job was to build the back end, connect the two, and deploy the entire app to Heroku.
 
+Built with Node.js, Express.js, and UUID.
+
 ## Screenshots
 
 ![App Screenshot](https://user-images.githubusercontent.com/95142863/158084703-01983353-25fd-4894-a95f-421abc0c196a.png)
