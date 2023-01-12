@@ -6,7 +6,7 @@ Users can access their previous notes by clicking on any of the notes in the lef
 
 For this challenge, the application’s front end has already been created. Our job was to build the back end, connect the two, and deploy the entire app to Heroku.
 
-[Click to view the deployed application!](https://nameless-spire-63081.herokuapp.com/)
+[Click to view the deployed application!](https://immense-waters-79428.herokuapp.com/)
 
 ## Screenshots
 
@@ -73,7 +73,6 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 Built with Node.js, Express.js, and the [UUID](https://www.npmjs.com/package/uuid) package.
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-
 
 ## Documentation
 
